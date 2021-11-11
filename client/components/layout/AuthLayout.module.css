@@ -1,0 +1,57 @@
+.container {
+  background-color: #111;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.centerComponent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #333;
+  min-width: 580px;
+  min-height: 400px;
+  border-radius: 16px;
+  color: white;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.centerInner {
+  padding: 32px;
+}
+
+.tabBar {
+  display: flex;
+  flex-direction: row;
+  position:relative;
+}
+.tab {
+  flex: 1;
+  background-color: #111;
+  /* min-height: 40px; */
+  border-bottom: 1px solid #333;
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.tab.active {
+    background-color: #333;
+}
+
+.tab:hover {
+    cursor: pointer;
+    /* background-color: #333; */
+}
+.tab:first-of-type {
+  /* border-radius: 24px 0px 0px 0px; */
+  /* border: 1px solid #333; */
+}
+
+.tab:last-of-type {
+  /* border-radius: 0px 24px 0px 0px; */
+}
