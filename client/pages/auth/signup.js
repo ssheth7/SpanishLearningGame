@@ -16,15 +16,13 @@ export default function SignupPage() {
   const isPasswordValid = () => !!password && password.length > 0
 
   const isDisabled = (_) => !isEmailValid() || !isPasswordValid() || loading
-  
+
   const submit = async () => {
-    console.log("a")
     if (isDisabled()) return
     setLoading(true)
 
     try {
       const resp = await submitSignup({ email, password })
-      console.log(resp)
       if (resp.success) {
         if (resp.redirect) {
           window.location.href = resp.redirect
