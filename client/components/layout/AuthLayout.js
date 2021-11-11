@@ -4,7 +4,7 @@ import Link from "next/link"
 const tabs = {
   login: {
     to: "/auth/login",
-    label: "Login",
+    label: "Log in",
   },
   signup: {
     to: "/auth/signup",
