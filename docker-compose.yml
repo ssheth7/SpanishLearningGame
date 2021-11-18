@@ -14,3 +14,9 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
     command: ["npm", "run", "dev"]
+  mongodb:
+    image: mongo:4.4.10
+    expose: 
+      - "27017"
+    ports:
+      - "27017:27017"
