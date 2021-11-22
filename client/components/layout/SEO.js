@@ -1,11 +1,9 @@
 import Head from "next/head"
+import { app } from "../../registry/app"
 
 const defaults = {
   title: "",
-  appname: "Spanish Learning Game",
-  description: "A game for learning Spanish",
-  keywords: ["game", "spanish", "learn spanish"],
-  type: "website",
+  ...app
 }
 
 export default function SEO({ ...input }) {
