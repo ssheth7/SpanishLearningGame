@@ -1,6 +1,8 @@
-import { Document, Schema, model, connect } from "mongoose"
+import { Document, Schema, model, models } from "mongoose"
 
-export default Schema({
+const schema = new Schema({
   token: String,
-  user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  user: { type: Schema.Types.ObjectId, ref: "User" },
 })
+
+export default models.UserAuthRelationship || model("UserAuthRelationship", schema)
