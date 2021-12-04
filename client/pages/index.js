@@ -30,6 +30,8 @@ export default function Home({ levels = [] }) {
 
       {/* call to action */}
       <button style={{ height: "60px", width: "200" }}> Start modules now </button>
+      <button style={{ height: "60px", width: "200" }}><a href = "https://forms.gle/XMU5LQqEcPnC7Fi58" target="_blank"> Website Response Form</a></button>
+      <button style={{ height: "60px", width: "200" }}><a href = "https://forms.gle/VbvCi4eiXm3jEL398" target="_blank"> Module Response Form</a></button>
     </div>
   )
 }
