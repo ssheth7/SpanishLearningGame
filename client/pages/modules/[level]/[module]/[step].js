@@ -8,7 +8,7 @@ import StepActionBar from "../../../../components/game/StepActionBar"
 
 export default function ModuleStep({ level, module, stepIndex, step }) {
   return (
-    <AppLayout activePage="/">
+    <AppLayout activePage="/modules">
       <h1>ModuleStep Debug</h1>
 
       {module && step ? (
@@ -32,7 +32,6 @@ export const getStaticProps = async ({ params }) => {
   const { level, module } = await getModule({ levelID: params.level, moduleID: params.module })
 
   const stepIndex = parseInt(params.step) - 1
-  console.log({ stepIndex })
   const step = module?.steps?.[stepIndex]
 
   if (!level || stepIndex == -1 || !module) {
