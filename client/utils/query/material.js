@@ -1,9 +1,11 @@
-import modules from "../../modules.json"
+import levels from "../../modules.json"
 
 export const getAllLevels = async () => {
-  return modules
+  return levels
 }
 
 export const getLevelById = async (id) => {
-  return modules.find((module) => module.id === id)
+  return levels.find((module) => module.id === id)
 }
+
+export const getModule = async 
