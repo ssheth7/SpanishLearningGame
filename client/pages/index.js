@@ -3,6 +3,7 @@ import AppLayout from "../components/layout/AppLayout"
 import { getAllLevels } from "../utils/query/material"
 
 export default function Home({ levels = [] }) {
+  console.log({ levels })
   return (
     <div style={{ backgroundColor: "lightblue" }}>
       <AppLayout activePage="/">
@@ -19,7 +20,7 @@ export default function Home({ levels = [] }) {
 
         <h2 style={{ color: "green", textAlign: "center" }}>Levels of difficulty we offer</h2>
 
-        {levels.map(({ id, title, description }) => (
+        {(levels || []).map(({ id, title, description }) => (
           <div key={id}>
             <h3 style={{ color: "green", textAlign: "center" }}>{title}</h3>
             <p>{description}</p>
@@ -36,9 +37,11 @@ export default function Home({ levels = [] }) {
 export const getStaticProps = async () => {
   const allLevels = await getAllLevels()
 
+  console.log(allLevels)
+
   return {
     props: {
-      levels: allLevels || [],
+      levels: Object.values(allLevels) || [],
     },
   }
 }
