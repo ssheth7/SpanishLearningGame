@@ -1,5 +1,21 @@
 const bcrypt = require('bcrypt');
+const faker = require("faker");
 const {MongoClient} = require("mongodb");
+
+const numUsers = 20;
+const randomResult = Math.random() > 0.5;
+const generateUser = () => {
+    return {
+        username: faker.internet.userName(),
+        password: faker.internet.password(),
+        level : {
+            1 : [randomResult, randomResult, randomResult, randomResult, randomResult],
+            2 : [randomResult, randomResult],
+            3 : [randomResult, randomResult]
+        }
+    };
+}
+
 const uri = "mongodb://localhost:27017";
 let client;
 
@@ -11,16 +27,11 @@ async function main() {
         const db = client.db("SpanishLearningGame");//.collection("users");
         const collection = db.collection("users");
         collection.drop();
-        let initialUser = {
-            username : "ssheth7",
-            password: "password",
-            level : {
-                1 : [100, 80, 90, 80, 100],
-                2 : [null, null],
-                3 : [null, null]
-            }
+        let users = [];
+        for (let i = 0; i < numUsers; i++) {
+            users.push(generateUser());
         }
-        await collection.insertOne(initialUser);
+        await collection.insertMany(users);
         client.close();    
 }
 main().catch((e) => client.close() && console.error(e));
