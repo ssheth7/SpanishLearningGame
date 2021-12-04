@@ -2,16 +2,21 @@ import AppLayout from "../../../../components/layout/AppLayout"
 
 import { getModule } from "../../../../utils/query/material"
 
+import ActiveStep from "../../../../components/game/ActiveStep"
+
+import StepActionBar from "../../../../components/game/StepActionBar"
+
 export default function ModuleStep({ level, module, stepIndex, step }) {
   return (
     <AppLayout activePage="/">
       <h1>ModuleStep Debug</h1>
 
-      <code>
-        <pre>
-          <code>{JSON.stringify({ level, module, stepIndex, step }, null, 2)}</code>
-        </pre>
-      </code>
+      {module && step ? (
+        <>
+          <StepActionBar module={module} stepIndex={stepIndex} />
+          <ActiveStep step={step} />
+        </>
+      ) : null}
     </AppLayout>
   )
 }
@@ -26,7 +31,8 @@ export const getStaticProps = async ({ params }) => {
 
   const { level, module } = await getModule({ levelID: params.level, moduleID: params.module })
 
-  const stepIndex = parseInt(params.step)
+  const stepIndex = parseInt(params.step) - 1
+  console.log({ stepIndex })
   const step = module?.steps?.[stepIndex]
 
   if (!level || stepIndex == -1 || !module) {
