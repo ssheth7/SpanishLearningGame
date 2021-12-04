@@ -5,7 +5,20 @@
             "level": 1,
             "title": "Beginner",
             "description": "This level is suggested for non-spanish speakers who have had minimial to no ability to speak Spanish. These modules are less diffcult and focus on basic terminology and everyday use of words. This is a great place to start in your journey to becoming a fluent Spanish speaker.",
-            "modules": []
+            "modules": [
+                {
+                    "id": "the-basics",
+                    "title": "The Basics",
+                    "description": "The basics of Spanish are the most important concepts to learn in order to become a fluent speaker. ",
+                    "steps": [
+                        {
+                            "english": "ruler",
+                            "spanish": "regla"
+                        }
+                    ]
+
+                }
+            ]
         },
         "intermediate": {
             "id": "intermediate",
