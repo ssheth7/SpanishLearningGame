@@ -28,6 +28,53 @@
                             "spanish": "regla"
                         }
                     ]
+                },
+                {
+                    "id": "numbers",
+                    "title": "Numbers",
+                    "description": "This module is designed for non-spanish speakers to learn the first 10 numbers of the spanish language.",
+                    "steps": [
+                        {
+                            "english": "one",
+                            "spanish": "uno"
+                        },
+                        {
+                            "english": "two",
+                            "spanish": "dos"
+                        },
+                        {
+                            "english": "three",
+                            "spanish": "tres"
+                        },
+                        {
+                            "english": "four",
+                            "spanish": "cuatro"
+                        },
+                        {
+                            "english": "five",
+                            "spanish": "cinco"
+                        },
+                        {
+                            "english": "six",
+                            "spanish": "sies"
+                        },
+                        {
+                            "english": "seven",
+                            "spanish": "siete"
+                        },
+                        {
+                            "english": "eight",
+                            "spanish": "ocho"
+                        },
+                        {
+                            "english": "nine",
+                            "spanish": "nueve"
+                        },
+                        {
+                            "english": "ten",
+                            "spanish": "diez"
+                        }
+                    ]
                 }
             ]
         },
