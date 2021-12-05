@@ -75,7 +75,158 @@
                             "spanish": "diez"
                         }
                     ]
+                },
+                {
+                    "id": "convo",
+                    "title": "Conversional Words",
+                    "description": "This module is designed for non-spanish speakers to learn everyday conversational words.",
+                    "steps": [
+                        {
+                            "english": "Yes",
+                            "spanish": "Si"
+                        },
+                        {
+                            "english": "Who?",
+                            "spanish": "Quien?"
+                        },
+                        {
+                            "english": "What?",
+                            "spanish": "Que?"
+                        },
+                        {
+                            "english": "Why?",
+                            "spanish": "Por que?"
+                        },
+                        {
+                            "english": "Where?",
+                            "spanish": "Donde"
+                        },
+                        {
+                            "english": "Hello",
+                            "spanish": "Hola"
+                        },
+                        {
+                            "english": "I like",
+                            "spanish": "Me gusta"
+                        },
+                        {
+                            "english": "Goodbye",
+                            "spanish": "Adios"
+                        },
+                        {
+                            "english": "Please",
+                            "spanish": "Por favor"
+                        },
+                        {
+                            "english": "Thank You",
+                            "spanish": "Gracias"
+                        },
+                        {
+                            "english": "Sorry",
+                            "spanish": "Lo siento"
+                        }
+                    ]
+                },
+                {
+                    "id": "places",
+                    "title": "Everyday Places",
+                    "description": "This module is designed for non-spanish speakers to learn everyday places people go to.",
+                    "steps": [
+                        {
+                            "english": "Bathroom",
+                            "spanish": "Bano"
+                        },
+                        {
+                            "english": "Home",
+                            "spanish": "Casa"
+                        },
+                        {
+                            "english": "Bedroom",
+                            "spanish": "Cuarto"
+                        },
+                        {
+                            "english": "Kitchen",
+                            "spanish": "Cocina"
+                        },
+                        {
+                            "english": "Library",
+                            "spanish": "Biblioteca"
+                        },
+                        {
+                            "english": "School",
+                            "spanish": "Escuela "
+                        },
+                        {
+                            "english": "Bank",
+                            "spanish": "Banco"
+                        },
+                        {
+                            "english": "Park",
+                            "spanish": "Paque"
+                        },
+                        {
+                            "english": "Restaurant",
+                            "spanish": "Restaurante"
+                        },
+                        {
+                            "english": "Mall",
+                            "spanish": "Centro Comercial"
+                        }
+                    ]
+                },
+                {
+                    "id": "verbs",
+                    "title": "Everyday Action Verbs",
+                    "description": "This module is designed for non-spanish speakers to learn everyday actions and verbs people do.",
+                    "steps": [
+                        {
+                            "english": "To Speak",
+                            "spanish": "Hablar"
+                        },
+                        {
+                            "english": "To Run",
+                            "spanish": "Correr"
+                        },
+                        {
+                            "english": "To Work",
+                            "spanish": "Trabajar"
+                        },
+                        {
+                            "english": "To Write",
+                            "spanish": "Escribir"
+                        },
+                        {
+                            "english": "To Eat",
+                            "spanish": "Comer"
+                        },
+                        {
+                            "english": "To Watch",
+                            "spanish": "Ver "
+                        },
+                        {
+                            "english": "To Have",
+                            "spanish": "Tener"
+                        },
+                        {
+                            "english": "To Live",
+                            "spanish": "Vivir"
+                        },
+                        {
+                            "english": "To Need",
+                            "spanish": "Necesitar"
+                        },
+                        {
+                            "english": "To Come",
+                            "spanish": "Venir"
+                        }
+                    ]
                 }
+
+                
+
+
+
+
             ]
         },
         "intermediate": {
