@@ -1,57 +1,57 @@
-const bcrypt = require('bcrypt');
-const faker = require("faker");
-const {MongoClient} = require("mongodb");
+const bcrypt = require("bcrypt")
+const faker = require("faker")
+const { MongoClient } = require("mongodb")
 
-const numUsers = 20;
+const numUsers = 20
 const ModuleResult = (level) => {
-    let average;
-    switch (level) {
-        case 1:
-            average = 10; // seconds
-            break;
-        case 2:
-            average = 30; // seconds
-            break;
-        case 3:
-            average = 60; // seconds
-            break;
-    }
+  let average
+  switch (level) {
+    case 1:
+      average = 10 // seconds
+      break
+    case 2:
+      average = 30 // seconds
+      break
+    case 3:
+      average = 60 // seconds
+      break
+  }
 
-    return {
-        initialGrade: Math.floor(Math.random() * 2 + 1) * 10,
-        finalGrade: Math.floor(Math.random() * (10 - 6 ) + 6) * 10,
-        timeSpent: Math.random() * (average / 2) + average
-    }
-};
+  return {
+    initialGrade: Math.floor(Math.random() * 2 + 1) * 10,
+    finalGrade: Math.floor(Math.random() * (10 - 6) + 6) * 10,
+    timeSpent: Math.random() * (average / 2) + average,
+  }
+}
 const generateUser = () => {
-    return {
-        username: faker.internet.userName(),
-        password: faker.internet.password(),
-        level : {
-            1 : [ModuleResult(1), ModuleResult(1), ModuleResult(1), ModuleResult(1), ModuleResult(1)],
-            2 : [ModuleResult(2), ModuleResult(2)],
-            3 : [ModuleResult(3), ModuleResult(3)]
-        }
-    };
+  return {
+    username: faker.internet.userName(),
+    password: faker.internet.password(),
+    level: {
+      1: [ModuleResult(1), ModuleResult(1), ModuleResult(1), ModuleResult(1), ModuleResult(1)],
+      2: [ModuleResult(2), ModuleResult(2)],
+      3: [ModuleResult(3), ModuleResult(3)],
+    },
+  }
 }
 
-const uri = "mongodb://127.0.0.1:27017";
-let client;
+const uri = "mongodb://127.0.0.1:27017"
+let client
 
 async function main() {
-        client = new MongoClient(uri, {
-            useNewUrlParser: true,
-        });
-        await client.connect();
-        const db = client.db("SpanishLearningGame");
-        const collection = db.collection("users");
-        collection.drop();
-        let users = [];
-        for (let i = 0; i < numUsers; i++) {
-            users.push(generateUser());
-        }
-        
-        await collection.insertMany(users);
-        client.close();    
+  client = new MongoClient(uri, {
+    useNewUrlParser: true,
+  })
+  await client.connect()
+  const db = client.db("SpanishLearningGame")
+  const collection = db.collection("users")
+  collection.drop()
+  let users = []
+  for (let i = 0; i < numUsers; i++) {
+    users.push(generateUser())
+  }
+
+  await collection.insertMany(users)
+  client.close()
 }
-main().catch((e) => client.close() && console.error(e));
+main().catch((e) => client.close() && console.error(e))
