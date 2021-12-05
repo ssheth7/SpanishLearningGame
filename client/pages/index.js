@@ -1,7 +1,9 @@
 import AppLayout from "../components/layout/AppLayout"
-
+import {Button, Col, Row, Container} from "react-bootstrap"
+import Footer from "../components/layout/Footer"
 import { getAllLevels } from "../utils/query/material"
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Home({ levels = [] }) {
   console.log({ levels })
   return (
@@ -10,6 +12,8 @@ export default function Home({ levels = [] }) {
         <h1 style={{ color: "green", textAlign: "center" }}>Spanish Learning Game</h1>
         <h2 style={{ color: "green", textAlign: "center" }}> Make It Fun To Learn SPANISH </h2>
         <hr />
+        <Col style={{textAlign: "center", display: "flex", justifyContent: "center"}}>
+        
         <img
           src={
             "https://media.istockphoto.com/vectors/spanish-language-hand-drawn-doodles-and-lettering-vector-id1082074870?k=20&m=1082074870&s=612x612&w=0&h=qte14fBvZRl1eRBI2GKc-q7N6HvPTtiRnBi6NKMdaL0="
@@ -17,14 +21,17 @@ export default function Home({ levels = [] }) {
           alt="EasySpanish"
           style={{ }}
         />
-
+        </Col>
         <h2 style={{ color: "green", textAlign: "center" }}>Levels of Difficulty We Offer</h2>
 
         {(levels || []).map(({ id, title, description }) => (
           <div key={id}>
             <h3 style={{ color: "green", textAlign: "center" }}>{title}</h3>
             <p>{description}</p>
-            <button style={{ height: "60px", width: "200" , justifyContent:"center",alignItems:"center"}}> Begin {title} Modules </button>
+              <Col style={{textAlign: "center", display: "flex", justifyContent: "center"}}>
+                <Button variant="success" > Begin {title} Modules </Button>
+              </Col >
+              <br></br>
           </div>
         ))}
       </AppLayout>
@@ -33,10 +40,9 @@ export default function Home({ levels = [] }) {
       
 
       <hr />
-      <h4 style={{ color: "black", textAlign: "center" }}> Please Rate Our Website And Voice Your Concerns </h4>
-      <p style={{ color: "black", textAlign: "center" }}> We value our user's feedback and look to improve our website and usability. We aim to make a site that is easy to learn and easy to navigate. Please complete the survey below.</p>
-      <button style={{ height: "60px", width: "200" }}><a href = "https://forms.gle/XMU5LQqEcPnC7Fi58" target="_blank"> Website Response Form</a></button>
-      <button style={{ height: "60px", width: "200" }}><a href = "https://forms.gle/VbvCi4eiXm3jEL398" target="_blank"> Module Response Form</a></button>
+      {/* <a href = "https://forms.gle/XMU5LQqEcPnC7Fi58" target="_blank"> Website Response Form</a>
+      <a href = "https://forms.gle/VbvCi4eiXm3jEL398" target="_blank"> Module Response Form</a> */}
+      <Footer/>
     </div>
   )
 }
