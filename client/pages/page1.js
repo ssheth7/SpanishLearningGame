@@ -3,6 +3,8 @@ import { Button, Col, Row, Container, Card } from "react-bootstrap"
 
 import { getAllLevels } from "../utils/query/material"
 
+var count = ["1", "2", "3", "4", "5"]
+
 export default function Home({ levels = [] }) {
   console.log({ levels })
   return (
@@ -18,57 +20,39 @@ export default function Home({ levels = [] }) {
             style={{}}
           />
         </Col>
-
-        <h2 style={{ color: "green", textAlign: "center" }}>Modules -------------- Quiz</h2>
-
+        <h2 style={{ color: "green", textAlign: "center" }}> Modules & Quizes Below</h2>
         <Container fluid>
-          <Row style={{ textAlign: "center", display: "flex", justifyContent: "center" }}>
-            {(levels || []).map(({ id, title, description, pages }) => (
-              <Col border="dark" xl={3} key={id}>
-                <Card style={{ width: "25rem", borderRadius: "25px", background: "#00cc44" }}>
-                  <Card.Body>
-                    <Card.Title>{title}</Card.Title>
-                    <Card.Text>{description}</Card.Text>
-                    {/* <Link to={pages}> */}
-                    <Button
-                      variant="success"
-                      onClick={(e) => {
-                        e.preventDefault()
-                        location.href = String(pages)
-                      }}
-                    >
-                      Begin {title} Modules
-                    </Button>
-                    {/* </Link> */}
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
+          {count.map((number) => (
+            <Row style={{ textAlign: "center", display: "flex", justifyContent: "center" }}>
+              <div>
+                <Col>
+                  <Button
+                    size="lg"
+                    variant="success"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      location.href = String(pages)
+                    }}
+                  >
+                    Module {number}
+                  </Button>
+                </Col>
+                <Col>
+                  <Button
+                    variant="success"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      location.href = String(pages)
+                    }}
+                  >
+                    Quiz {number}
+                  </Button>
+                </Col>
+              </div>
+            </Row>
+          ))}
         </Container>
-
-        {(levels || []).map(({ id, title, description }) => (
-          <div key={id}>
-            <h3 style={{ color: "green", textAlign: "center" }}>{title}</h3>
-            <p>{description}</p>
-          </div>
-        ))}
       </AppLayout>
-
-      {/* call to action */}
-      <button style={{ height: "60px", width: "200" }}> Start modules now </button>
-      <button style={{ height: "60px", width: "200" }}>
-        <a href="https://forms.gle/XMU5LQqEcPnC7Fi58" target="_blank">
-          {" "}
-          Website Response Form
-        </a>
-      </button>
-      <button style={{ height: "60px", width: "200" }}>
-        <a href="https://forms.gle/VbvCi4eiXm3jEL398" target="_blank">
-          {" "}
-          Module Response Form
-        </a>
-      </button>
     </div>
   )
 }
