@@ -1,52 +1,36 @@
 import AppLayout from "../components/layout/AppLayout"
-import {Button, Col, Row, Container, Card} from "react-bootstrap"
+import { Button, Col, Row, Container, Card } from "react-bootstrap"
 import Footer from "../components/layout/Footer"
 import { getAllLevels } from "../utils/query/material"
+import AppContainer from "../components/common/AppContainer"
+import Jumbotron from "../components/common/Jumbotron"
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import CardLayout from "../components/common/CardLayout"
 export default function Home({ levels = [] }) {
-  console.log({ levels })
   return (
-    <div style={{ backgroundColor: "lightblue" }}>
+    <div style={{ backgroundColor: "white" }}>
       <AppLayout activePage="/">
-        <h1 style={{ color: "green", textAlign: "center" }}>Spanish Learning Game</h1>
-        <h2 style={{ color: "green", textAlign: "center" }}> Make It Fun To Learn SPANISH </h2>
-        <hr />
-        <Col style={{textAlign: "center", display: "flex", justifyContent: "center"}}>
-        
-        <img
-          src={
-            "https://media.istockphoto.com/vectors/spanish-language-hand-drawn-doodles-and-lettering-vector-id1082074870?k=20&m=1082074870&s=612x612&w=0&h=qte14fBvZRl1eRBI2GKc-q7N6HvPTtiRnBi6NKMdaL0="
-          }
-          alt="EasySpanish"
-          style={{ }}
-        />
-        </Col>
-        <br></br>
-        <h2 style={{ color: "green", textAlign: "center" }}>Levels of Difficulty We Offer</h2>
-        <br></br>
-        <Container fluid>
-          <Row style={{textAlign: "center", display: "flex", justifyContent: "center"}}>
+        <AppContainer>
+          <Jumbotron>
+            <h1>Spanish Learning Game</h1>
+            <h2>Making learning fun.</h2>
+          </Jumbotron>
+          <CardLayout>
             {(levels || []).map(({ id, title, description }) => (
-                  <Col border="dark" xl={3} key={id}>
-                    <Card  style={{width: "25rem", borderRadius: "25px", background: "#00cc44" }}>
-                        <Card.Body>
-                          <Card.Title>{title}</Card.Title>
-                          <Card.Text>{description}</Card.Text>
-                            <Button variant="success" > Begin {title} Modules </Button>
-                        </Card.Body>    
-                    </Card>
-                  </Col>
+              <div style={{ background: "#ecf6f6" }}>
+                <h4>{title}</h4>
+                <p>{description}</p>
+                <Button variant="success"> Begin {title} Modules </Button>
+              </div>
             ))}
-          </Row>
-        </Container>
+          </CardLayout>
+        </AppContainer>
       </AppLayout>
 
       {/* call to action */}
-      
 
       <hr />
-      <Footer/>
+      <Footer />
     </div>
   )
 }
