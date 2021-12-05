@@ -3,14 +3,15 @@ export default function ModuleIndex() {
 }
 
 export async function getServerSideProps(context) {
-  return {
-    redirect: {
-      destination: context?.req?.path + "/1",
-      permanent: false,
-    },
-  }
+  const { level, module } = context.params
+
+  // TODO recall where user left off!
+  let step = 1
 
   return {
-    props: {},
+    redirect: {
+      destination: `/modules/${level}/${module}/${step}`,
+      permanent: false,
+    },
   }
 }
