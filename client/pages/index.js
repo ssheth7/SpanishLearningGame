@@ -15,10 +15,10 @@ export default function Home({ levels = [] }) {
             "https://media.istockphoto.com/vectors/spanish-language-hand-drawn-doodles-and-lettering-vector-id1082074870?k=20&m=1082074870&s=612x612&w=0&h=qte14fBvZRl1eRBI2GKc-q7N6HvPTtiRnBi6NKMdaL0="
           }
           alt="EasySpanish"
-          style={{ alignSelf: "center" }}
+          style={{ display:'flex',justifyContent:'center', alignItems:'center'}}
         />
 
-        <h2 style={{ color: "green", textAlign: "center" }}>Levels of difficulty we offer</h2>
+        <h2 style={{ color: "green", textAlign: "center" }}>Levels of Difficulty We Offer</h2>
 
         {(levels || []).map(({ id, title, description }) => (
           <div key={id}>

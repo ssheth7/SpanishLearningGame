@@ -5,6 +5,7 @@ export default function NavBar() {
   return (
     <>
       <Nav>navbar</Nav>
+      
     </>
     )
 }

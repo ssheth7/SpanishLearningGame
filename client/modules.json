@@ -7,29 +7,6 @@
             "description": "This level is suggested for non-spanish speakers who have had minimial to no ability to speak Spanish. These modules are less diffcult and focus on basic terminology and everyday use of words. This is a great place to start in your journey to becoming a fluent Spanish speaker.",
             "modules": [
                 {
-                    "id": "the-basics",
-                    "title": "The Basics",
-                    "description": "The basics of Spanish are the most important concepts to learn in order to become a fluent speaker. ",
-                    "steps": [
-                        {
-                            "english": "ruler",
-                            "spanish": "regla"
-                        },
-                        {
-                            "english": "ruler",
-                            "spanish": "regla"
-                        },
-                        {
-                            "english": "ruler",
-                            "spanish": "regla"
-                        },
-                        {
-                            "english": "ruler",
-                            "spanish": "regla"
-                        }
-                    ]
-                },
-                {
                     "id": "numbers",
                     "title": "Numbers",
                     "description": "This module is designed for non-spanish speakers to learn the first 10 numbers of the spanish language.",
@@ -269,26 +246,117 @@
                     ]
                 }
 
-                
-
-
-
-
             ]
         },
         "intermediate": {
             "id": "intermediate",
             "level": 2,
             "title": "Intermediate",
-            "description": "This level is suggested for those who have had exposure to Spanish and understand every day words. These modules can be diffcult, but focus on constructing sentences using basic terminology and understanding tenses of vocabulary words. This module requires knowledge of basic terminology and everyday use of words.",
-            "modules": []
+            "description": "This level is suggested for those who have had exposure to Spanish and understand basic spanish vocabulary. These modules focus on understanding tenses of vocabulary words. This module requires knowledge of basic terminology and everyday use of words.",
+            "modules": 
+            [
+                {
+                    "id": "present",
+                    "title": "Present Tense Verbs Ending in -AR",
+                    "description": "The present tense of Spanish is important to understand in order to fluently speak spanish. ",
+                    "steps": [
+                        {
+                            "english": "I Cook",
+                            "spanish": "Yo Cocino"
+                        },
+                        {
+                            "english": "You Cook",
+                            "spanish": "Tu Cocinas"
+                        },
+                        {
+                            "english": "He/She Cooks",
+                            "spanish": "El/Ella Cocina"
+                        },
+                        {
+                            "english": "We Cook",
+                            "spanish": "Nosotros Cocinamos"
+                        },
+                        {
+                            "english": "They Cook",
+                            "spanish": "Ellos Cocinan"
+                        }
+                    ]
+                },
+                {
+                    "id": "past",
+                    "title": "Past Tense Verbs Ending in -AR",
+                    "description": "The past tense of Spanish is important to understand in order to fluently speak spanish. ",
+                    "steps": [
+                        {
+                            "english": "I Cooked",
+                            "spanish": "Yo Cocine"
+                        },
+                        {
+                            "english": "You Cook",
+                            "spanish": "Tu Cocinaste"
+                        },
+                        {
+                            "english": "He/She Cooked",
+                            "spanish": "El/Ella Cocino"
+                        },
+                        {
+                            "english": "We Cooked",
+                            "spanish": "Nosotros Cocinamos"
+                        },
+                        {
+                            "english": "They Cooked",
+                            "spanish": "Ellos Cocinaron"
+                        }
+                    ]
+                }
+
+            ]
         },
         "expert": {
             "id": "expert",
             "level": 3,
             "title": "Expert",
-            "description": "This level is suggested for those who have a strong understanding in Spanish and are looking to become a fluent Spanish-speaker. This module is diffcult and focuses on diffcult construction of sentences and paragraph writing. In addition, you must have extensive vocabulary and understand which tenses to use. This level is recommended for those who completed the Intermediate Level.",
-            "modules": []
+            "description": "This level is suggested for those who have a strong understanding in Spanish and are looking to become a fluent Spanish-speaker. This module is diffcult and focuses on the proper construction of sentences. In addition, you must have extensive vocabulary and understand which tenses to use. This level is recommended for those who completed the Intermediate Level.",
+            "modules": [
+
+                {
+                    "id": "sent-present",
+                    "title": "Sentences In Present Tense",
+                    "description": "The ability to construct an entire sentence in present tense is vital in order to speak fluent spanish. ",
+                    "steps": [
+                        {
+                            "english": "I walk to school.",
+                            "spanish": "Yo camino a la escuela."
+                        },
+                                                {
+                            "english": "You run to the party.",
+                            "spanish": "Tu corres a la fiesta."
+                        }
+                        
+                    ]
+                },
+                
+                {
+                    "id": "sent-past",
+                    "title": "Sentences In Past Tense",
+                    "description": "The ability to construct an entire sentence in past tense is vital in order to speak fluent spanish. ",
+                    "steps": [
+                        {
+                            "english": "He walked on the street.",
+                            "spanish": "Él caminó en la calle."
+                        },
+                        {
+                            "english": "We ran in the garden.",
+                            "spanish": "Nosotros corrimos en el jardín."
+                        }
+                        
+                    ]
+                }
+
+
+
+
+            ]
         }
     }
 }
