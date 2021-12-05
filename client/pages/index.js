@@ -8,7 +8,7 @@ export default function Home({ levels = [] }) {
     <div style={{ backgroundColor: "lightblue" }}>
       <AppLayout activePage="/">
         <h1 style={{ color: "green", textAlign: "center" }}>Spanish Learning Game</h1>
-        <h2 style={{ color: "green", textAlign: "center" }}> Learn SPANISH In Less Than 30 Days</h2>
+        <h2 style={{ color: "green", textAlign: "center" }}> Make It Fun To Learn SPANISH </h2>
         <hr />
         <img
           src={
@@ -30,6 +30,11 @@ export default function Home({ levels = [] }) {
 
       {/* call to action */}
       <button style={{ height: "60px", width: "200" }}> Start modules now </button>
+
+
+      <hr />
+      <h4 style={{ color: "black", textAlign: "center" }}> Please Rate Our Website And Voice Your Concerns </h4>
+      <p style={{ color: "black", textAlign: "center" }}> We value our user's feedback and look to improve our website and usability. We aim to make a site that is easy to learn and easy to navigate. Please complete the survey below.</p>
       <button style={{ height: "60px", width: "200" }}><a href = "https://forms.gle/XMU5LQqEcPnC7Fi58" target="_blank"> Website Response Form</a></button>
       <button style={{ height: "60px", width: "200" }}><a href = "https://forms.gle/VbvCi4eiXm3jEL398" target="_blank"> Module Response Form</a></button>
     </div>
