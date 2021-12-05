@@ -220,6 +220,53 @@
                             "spanish": "Venir"
                         }
                     ]
+                },
+                {
+                    "id": "adj",
+                    "title": "Everyday Action Adjectives",
+                    "description": "This module is designed for non-spanish speakers to learn everyday adjectives people use.",
+                    "steps": [
+                        {
+                            "english": "Happy",
+                            "spanish": "Feliz"
+                        },
+                        {
+                            "english": "Sad",
+                            "spanish": "Triste"
+                        },
+                        {
+                            "english": "Small",
+                            "spanish": "Pequeño"
+                        },
+                        {
+                            "english": "Beautiful",
+                            "spanish": "Bonita"
+                        },
+                        {
+                            "english": "Easy",
+                            "spanish": "Fácil"
+                        },
+                        {
+                            "english": "Hard",
+                            "spanish": "Difícil"
+                        },
+                        {
+                            "english": "Fun",
+                            "spanish": "Divertido"
+                        },
+                        {
+                            "english": "Boring",
+                            "spanish": "Aburrido"
+                        },
+                        {
+                            "english": "Good",
+                            "spanish": "Bueno"
+                        },
+                        {
+                            "english": "Bad",
+                            "spanish": "Malo"
+                        }
+                    ]
                 }
 
                 
