@@ -20,7 +20,7 @@ export default function Home({ levels = [] }) {
               <div style={{ background: "#ecf6f6" }}>
                 <h4>{title}</h4>
                 <p>{description}</p>
-                <Button variant="success"> Begin {title} Modules </Button>
+                <button variant="success"> Start {title} &rarr; </button>
               </div>
             ))}
           </CardLayout>
