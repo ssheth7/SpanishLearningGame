@@ -5,6 +5,7 @@
             "level": 1,
             "title": "Beginner",
             "description": "This level is suggested for non-spanish speakers who have had minimal to no ability to speak Spanish. These modules focus on basic terminology and everyday use of words. This is a great place to start in your journey to becoming a fluent Spanish speaker.",
+            "pages": "/page1",
             "modules": [
                 {
                     "id": "numbers",
@@ -253,6 +254,7 @@
             "level": 2,
             "title": "Intermediate",
             "description": "This level is suggested for those who have had exposure to Spanish and understand basic spanish vocabulary. These modules focus on understanding tenses of vocabulary words. This level requires knowledge of basic terminology and everyday use of words.",
+            "pages": "/page2",
             "modules": 
             [
                 {
@@ -317,6 +319,7 @@
             "level": 3,
             "title": "Expert",
             "description": "This level is suggested for those who have a strong understanding of Spanish and are looking to become a fluent Spanish-speaker. This level is diffcult and focuses on the proper construction of sentences. We recommend you complete the previous levels before starting this one.",
+            "pages": "/page3",
             "modules": [
 
                 {
