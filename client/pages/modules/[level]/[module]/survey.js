@@ -7,7 +7,8 @@ export default function ModuleSurvey({}) {
     <AppLayout activePage="/modules">
       <h1>Post-module survey</h1>
 
-      {/* TODO */}
+      
+      
     </AppLayout>
   )
 }

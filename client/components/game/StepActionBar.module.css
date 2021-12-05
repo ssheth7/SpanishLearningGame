@@ -1,0 +1,27 @@
+.steppedBar {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+.steppedBar div {
+    width: 8px;
+    height: 8px;
+    background-color: gray;
+    border-radius: 100%;
+    margin: 0 2px;
+}
+.steppedBar div.steppedActive {
+    background-color: #00ff00;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    justify-items: center;
+}
+
+.flex>* {
+    margin: 0 4px;
+}

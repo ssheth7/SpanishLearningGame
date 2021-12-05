@@ -1,5 +1,5 @@
 import styles from "./RenderStep.module.css"
 
-export default function RenderStep({ step }) {
+export default function RenderStepPhoto({ step }) {
   return <>RenderStep</>
 }

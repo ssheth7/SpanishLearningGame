@@ -1,25 +1,19 @@
 import styles from "./ActiveStep.module.css"
 
-export default function ActiveStep({ step }) {
+import RenderStepNoPhoto from "../module/RenderStepNoPhoto"
+import RenderStepPhoto from "../module/RenderStepPhoto"
+
+export default function ActiveStep({ step, actionBar = null }) {
   return (
     <div className={styles.activeStep}>
-      <h1> TODO ActiveStep </h1>
-      <table>
-        <thead>
-          <tr>
-            <th>English</th>
-          </tr>
-          <tr>
-            <th>Spanish</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{step?.english}</td>
-            <td>{step?.spanish}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className={styles.stepContainer}>
+        <div className={styles.center}>{actionBar}</div>
+        {step?.photo ? <RenderStepPhoto step={step} /> : <RenderStepNoPhoto step={step} />}
+
+        <code>
+          <pre>{JSON.stringify(step, null, 2)}</pre>
+        </code>
+      </div>
     </div>
   )
 }

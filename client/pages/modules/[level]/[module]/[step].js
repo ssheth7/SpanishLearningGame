@@ -6,17 +6,20 @@ import ActiveStep from "../../../../components/game/ActiveStep"
 
 import StepActionBar from "../../../../components/game/StepActionBar"
 
+import AppContainer from "../../../../components/common/AppContainer"
+
 export default function ModuleStep({ level, module, stepIndex, step }) {
   return (
     <AppLayout activePage="/modules">
-      <h1>ModuleStep Debug</h1>
+      <AppContainer>
+        {/* <h1>ModuleStep Debug</h1> */}
 
-      {module && step ? (
-        <>
-          <StepActionBar module={module} stepIndex={stepIndex} />
-          <ActiveStep step={step} />
-        </>
-      ) : null}
+        {module && step ? (
+          <>
+            <ActiveStep actionBar={<StepActionBar module={module} stepIndex={stepIndex} />} step={step} />
+          </>
+        ) : null}
+      </AppContainer>
     </AppLayout>
   )
 }
