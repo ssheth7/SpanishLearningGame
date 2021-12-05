@@ -1,5 +1,5 @@
 import AppLayout from "../components/layout/AppLayout"
-import {Button, Col, Row, Container} from "react-bootstrap"
+import {Button, Col, Row, Container, Card} from "react-bootstrap"
 import Footer from "../components/layout/Footer"
 import { getAllLevels } from "../utils/query/material"
 
@@ -22,26 +22,30 @@ export default function Home({ levels = [] }) {
           style={{ }}
         />
         </Col>
+        <br></br>
         <h2 style={{ color: "green", textAlign: "center" }}>Levels of Difficulty We Offer</h2>
-
-        {(levels || []).map(({ id, title, description }) => (
-          <div key={id}>
-            <h3 style={{ color: "green", textAlign: "center" }}>{title}</h3>
-            <p>{description}</p>
-              <Col style={{textAlign: "center", display: "flex", justifyContent: "center"}}>
-                <Button variant="success" > Begin {title} Modules </Button>
-              </Col >
-              <br></br>
-          </div>
-        ))}
+        <br></br>
+        <Container fluid>
+          <Row style={{textAlign: "center", display: "flex", justifyContent: "center"}}>
+            {(levels || []).map(({ id, title, description }) => (
+                  <Col border="dark" xl={3} key={id}>
+                    <Card  style={{width: "25rem", borderRadius: "25px", background: "#00cc44" }}>
+                        <Card.Body>
+                          <Card.Title>{title}</Card.Title>
+                          <Card.Text>{description}</Card.Text>
+                            <Button variant="success" > Begin {title} Modules </Button>
+                        </Card.Body>    
+                    </Card>
+                  </Col>
+            ))}
+          </Row>
+        </Container>
       </AppLayout>
 
       {/* call to action */}
       
 
       <hr />
-      {/* <a href = "https://forms.gle/XMU5LQqEcPnC7Fi58" target="_blank"> Website Response Form</a>
-      <a href = "https://forms.gle/VbvCi4eiXm3jEL398" target="_blank"> Module Response Form</a> */}
       <Footer/>
     </div>
   )

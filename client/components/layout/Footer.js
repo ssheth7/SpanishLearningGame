@@ -4,10 +4,9 @@ import {Container, Row, Col, Box} from 'react-bootstrap'
 const Footer = ()  => {
     const xlsize = 2;
     return (
-        <>
+        <footer>
         <h4 style={{ color: "black", 
-            textAlign: "center", 
-            marginTop: "50px" }}>
+            textAlign: "center"}}>
              Please Rate Our Website And Voice Your Concerns 
         </h4>
         <p style={{ color: "black", 
@@ -25,7 +24,7 @@ const Footer = ()  => {
             </Row>
         </Container>
         <br></br>
-    </>
+    </footer>
     );
 };
 

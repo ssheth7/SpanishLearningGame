@@ -4,7 +4,7 @@
             "id": "beginner",
             "level": 1,
             "title": "Beginner",
-            "description": "This level is suggested for non-spanish speakers who have had minimial to no ability to speak Spanish. These modules are less diffcult and focus on basic terminology and everyday use of words. This is a great place to start in your journey to becoming a fluent Spanish speaker.",
+            "description": "This level is suggested for non-spanish speakers who have had minimal to no ability to speak Spanish. These modules focus on basic terminology and everyday use of words. This is a great place to start in your journey to becoming a fluent Spanish speaker.",
             "modules": [
                 {
                     "id": "numbers",
@@ -252,7 +252,7 @@
             "id": "intermediate",
             "level": 2,
             "title": "Intermediate",
-            "description": "This level is suggested for those who have had exposure to Spanish and understand basic spanish vocabulary. These modules focus on understanding tenses of vocabulary words. This module requires knowledge of basic terminology and everyday use of words.",
+            "description": "This level is suggested for those who have had exposure to Spanish and understand basic spanish vocabulary. These modules focus on understanding tenses of vocabulary words. This level requires knowledge of basic terminology and everyday use of words.",
             "modules": 
             [
                 {
@@ -316,7 +316,7 @@
             "id": "expert",
             "level": 3,
             "title": "Expert",
-            "description": "This level is suggested for those who have a strong understanding in Spanish and are looking to become a fluent Spanish-speaker. This module is diffcult and focuses on the proper construction of sentences. In addition, you must have extensive vocabulary and understand which tenses to use. This level is recommended for those who completed the Intermediate Level.",
+            "description": "This level is suggested for those who have a strong understanding of Spanish and are looking to become a fluent Spanish-speaker. This level is diffcult and focuses on the proper construction of sentences. We recommend you complete the previous levels before starting this one.",
             "modules": [
 
                 {
