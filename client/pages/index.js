@@ -5,7 +5,7 @@ import { getAllLevels } from "../utils/query/material"
 export default function Home({ levels = [] }) {
   console.log({ levels })
   return (
-    <div style={{ backgroundColor: "lightblue" }}>
+    <div style={{ backgroundColor: "lightblue" , display: "flex"}}>
       <AppLayout activePage="/">
         <h1 style={{ color: "green", textAlign: "center" }}>Spanish Learning Game</h1>
         <h2 style={{ color: "green", textAlign: "center" }}> Make It Fun To Learn SPANISH </h2>
@@ -24,13 +24,13 @@ export default function Home({ levels = [] }) {
           <div key={id}>
             <h3 style={{ color: "green", textAlign: "center" }}>{title}</h3>
             <p>{description}</p>
+            <button style={{ height: "60px", width: "200" , display:"flex",justifyContent:"center",alignItems:"center"}}> Begin {title} Modules </button>
           </div>
         ))}
       </AppLayout>
 
       {/* call to action */}
-      <button style={{ height: "60px", width: "200" }}> Start modules now </button>
-
+      
 
       <hr />
       <h4 style={{ color: "black", textAlign: "center" }}> Please Rate Our Website And Voice Your Concerns </h4>

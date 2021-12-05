@@ -3,7 +3,7 @@ const faker = require("faker");
 const {MongoClient} = require("mongodb");
 
 const numUsers = 20;
-const randomResult = Math.random() > 0.5;
+const randomResult = Math.random() > 0.5; //needs to change ; it is always true
 const generateUser = () => {
     return {
         username: faker.internet.userName(),
