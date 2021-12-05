@@ -1,42 +1,43 @@
-import AppLayout from "../../../../components/layout/AppLayout"
+import AppLayout from "../../components/layout/AppLayout"
 
-import { getModule } from "../../../../utils/query/material"
+import { getAllLevels } from "../../utils/query/material"
 
-export default function ModulesPage({}) {
+// TODO make prettier
+export default function ModulesPage({ levels }) {
+  console.log({ levels })
   return (
     <AppLayout activePage="/modules">
-      <h1>Post-module survey</h1>
+      <h1>Available modules</h1>
 
-      {/* TODO */}
+      {levels ? (
+        levels.map((level) => (
+          <div key={level.id}>
+            <h2>{level.title}</h2>
+            <p>{level.description}</p>
+            <ul>
+              {level.modules.map((module) => (
+                <li key={module.id}>
+                  <a href={`/modules/${level.id}/${module.id}`}>{module.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      ) : (
+        <p>Just a sec, we're getting things ready...</p>
+      )}
     </AppLayout>
   )
-}
-
-export async function getStaticPaths() {
-  // TODO fix fallbacks to be properly optimized
-  return { paths: [], fallback: true }
 }
 
 export const getStaticProps = async ({}) => {
   // TODO error handling
 
-  const { level, module } = await getModule({ levelID: params.level, moduleID: params.module })
-
-  const stepIndex = parseInt(params.step) - 1
-  const step = module?.steps?.[stepIndex]
-
-  if (!level || stepIndex == -1 || !module) {
-    return {
-      notFound: true,
-    }
-  }
+  const levels = Object.values(await getAllLevels({}))
 
   return {
     props: {
-      level,
-      module,
-      stepIndex,
-      step,
+      levels,
     },
   }
 }
