@@ -15,7 +15,7 @@ export default function Home({ levels = [] }) {
             "https://media.istockphoto.com/vectors/spanish-language-hand-drawn-doodles-and-lettering-vector-id1082074870?k=20&m=1082074870&s=612x612&w=0&h=qte14fBvZRl1eRBI2GKc-q7N6HvPTtiRnBi6NKMdaL0="
           }
           alt="EasySpanish"
-          style={{ display:'flex',justifyContent:'center', alignItems:'center'}}
+          style={{ }}
         />
 
         <h2 style={{ color: "green", textAlign: "center" }}>Levels of Difficulty We Offer</h2>
@@ -24,13 +24,13 @@ export default function Home({ levels = [] }) {
           <div key={id}>
             <h3 style={{ color: "green", textAlign: "center" }}>{title}</h3>
             <p>{description}</p>
+            <button style={{ height: "60px", width: "200" , justifyContent:"center",alignItems:"center"}}> Begin {title} Modules </button>
           </div>
         ))}
       </AppLayout>
 
       {/* call to action */}
-      <button style={{ height: "60px", width: "200" }}> Start modules now </button>
-
+      
 
       <hr />
       <h4 style={{ color: "black", textAlign: "center" }}> Please Rate Our Website And Voice Your Concerns </h4>
