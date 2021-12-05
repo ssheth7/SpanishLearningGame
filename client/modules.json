@@ -7,43 +7,356 @@
             "description": "This level is suggested for non-spanish speakers who have had minimial to no ability to speak Spanish. These modules are less diffcult and focus on basic terminology and everyday use of words. This is a great place to start in your journey to becoming a fluent Spanish speaker.",
             "modules": [
                 {
-                    "id": "the-basics",
-                    "title": "The Basics",
-                    "description": "The basics of Spanish are the most important concepts to learn in order to become a fluent speaker. ",
+                    "id": "numbers",
+                    "title": "Numbers",
+                    "description": "This module is designed for non-spanish speakers to learn the first 10 numbers of the spanish language.",
                     "steps": [
                         {
-                            "english": "ruler",
-                            "spanish": "regla"
+                            "english": "one",
+                            "spanish": "uno"
                         },
                         {
-                            "english": "ruler",
-                            "spanish": "regla"
+                            "english": "two",
+                            "spanish": "dos"
                         },
                         {
-                            "english": "ruler",
-                            "spanish": "regla"
+                            "english": "three",
+                            "spanish": "tres"
                         },
                         {
-                            "english": "ruler",
-                            "spanish": "regla"
+                            "english": "four",
+                            "spanish": "cuatro"
+                        },
+                        {
+                            "english": "five",
+                            "spanish": "cinco"
+                        },
+                        {
+                            "english": "six",
+                            "spanish": "sies"
+                        },
+                        {
+                            "english": "seven",
+                            "spanish": "siete"
+                        },
+                        {
+                            "english": "eight",
+                            "spanish": "ocho"
+                        },
+                        {
+                            "english": "nine",
+                            "spanish": "nueve"
+                        },
+                        {
+                            "english": "ten",
+                            "spanish": "diez"
+                        }
+                    ]
+                },
+                {
+                    "id": "convo",
+                    "title": "Conversional Words",
+                    "description": "This module is designed for non-spanish speakers to learn everyday conversational words.",
+                    "steps": [
+                        {
+                            "english": "Yes",
+                            "spanish": "Si"
+                        },
+                        {
+                            "english": "Who?",
+                            "spanish": "Quien?"
+                        },
+                        {
+                            "english": "What?",
+                            "spanish": "Que?"
+                        },
+                        {
+                            "english": "Why?",
+                            "spanish": "Por que?"
+                        },
+                        {
+                            "english": "Where?",
+                            "spanish": "Donde"
+                        },
+                        {
+                            "english": "Hello",
+                            "spanish": "Hola"
+                        },
+                        {
+                            "english": "I like",
+                            "spanish": "Me gusta"
+                        },
+                        {
+                            "english": "Goodbye",
+                            "spanish": "Adios"
+                        },
+                        {
+                            "english": "Please",
+                            "spanish": "Por favor"
+                        },
+                        {
+                            "english": "Thank You",
+                            "spanish": "Gracias"
+                        },
+                        {
+                            "english": "Sorry",
+                            "spanish": "Lo siento"
+                        }
+                    ]
+                },
+                {
+                    "id": "places",
+                    "title": "Everyday Places",
+                    "description": "This module is designed for non-spanish speakers to learn everyday places people go to.",
+                    "steps": [
+                        {
+                            "english": "Bathroom",
+                            "spanish": "Bano"
+                        },
+                        {
+                            "english": "Home",
+                            "spanish": "Casa"
+                        },
+                        {
+                            "english": "Bedroom",
+                            "spanish": "Cuarto"
+                        },
+                        {
+                            "english": "Kitchen",
+                            "spanish": "Cocina"
+                        },
+                        {
+                            "english": "Library",
+                            "spanish": "Biblioteca"
+                        },
+                        {
+                            "english": "School",
+                            "spanish": "Escuela "
+                        },
+                        {
+                            "english": "Bank",
+                            "spanish": "Banco"
+                        },
+                        {
+                            "english": "Park",
+                            "spanish": "Paque"
+                        },
+                        {
+                            "english": "Restaurant",
+                            "spanish": "Restaurante"
+                        },
+                        {
+                            "english": "Mall",
+                            "spanish": "Centro Comercial"
+                        }
+                    ]
+                },
+                {
+                    "id": "verbs",
+                    "title": "Everyday Action Verbs",
+                    "description": "This module is designed for non-spanish speakers to learn everyday actions and verbs people do.",
+                    "steps": [
+                        {
+                            "english": "To Speak",
+                            "spanish": "Hablar"
+                        },
+                        {
+                            "english": "To Run",
+                            "spanish": "Correr"
+                        },
+                        {
+                            "english": "To Work",
+                            "spanish": "Trabajar"
+                        },
+                        {
+                            "english": "To Write",
+                            "spanish": "Escribir"
+                        },
+                        {
+                            "english": "To Eat",
+                            "spanish": "Comer"
+                        },
+                        {
+                            "english": "To Watch",
+                            "spanish": "Ver "
+                        },
+                        {
+                            "english": "To Have",
+                            "spanish": "Tener"
+                        },
+                        {
+                            "english": "To Live",
+                            "spanish": "Vivir"
+                        },
+                        {
+                            "english": "To Need",
+                            "spanish": "Necesitar"
+                        },
+                        {
+                            "english": "To Come",
+                            "spanish": "Venir"
+                        }
+                    ]
+                },
+                {
+                    "id": "adj",
+                    "title": "Everyday Action Adjectives",
+                    "description": "This module is designed for non-spanish speakers to learn everyday adjectives people use.",
+                    "steps": [
+                        {
+                            "english": "Happy",
+                            "spanish": "Feliz"
+                        },
+                        {
+                            "english": "Sad",
+                            "spanish": "Triste"
+                        },
+                        {
+                            "english": "Small",
+                            "spanish": "Pequeño"
+                        },
+                        {
+                            "english": "Beautiful",
+                            "spanish": "Bonita"
+                        },
+                        {
+                            "english": "Easy",
+                            "spanish": "Fácil"
+                        },
+                        {
+                            "english": "Hard",
+                            "spanish": "Difícil"
+                        },
+                        {
+                            "english": "Fun",
+                            "spanish": "Divertido"
+                        },
+                        {
+                            "english": "Boring",
+                            "spanish": "Aburrido"
+                        },
+                        {
+                            "english": "Good",
+                            "spanish": "Bueno"
+                        },
+                        {
+                            "english": "Bad",
+                            "spanish": "Malo"
                         }
                     ]
                 }
+
             ]
         },
         "intermediate": {
             "id": "intermediate",
             "level": 2,
             "title": "Intermediate",
-            "description": "This level is suggested for those who have had exposure to Spanish and understand every day words. These modules can be diffcult, but focus on constructing sentences using basic terminology and understanding tenses of vocabulary words. This module requires knowledge of basic terminology and everyday use of words.",
-            "modules": []
+            "description": "This level is suggested for those who have had exposure to Spanish and understand basic spanish vocabulary. These modules focus on understanding tenses of vocabulary words. This module requires knowledge of basic terminology and everyday use of words.",
+            "modules": 
+            [
+                {
+                    "id": "present",
+                    "title": "Present Tense Verbs Ending in -AR",
+                    "description": "The present tense of Spanish is important to understand in order to fluently speak spanish. ",
+                    "steps": [
+                        {
+                            "english": "I Cook",
+                            "spanish": "Yo Cocino"
+                        },
+                        {
+                            "english": "You Cook",
+                            "spanish": "Tu Cocinas"
+                        },
+                        {
+                            "english": "He/She Cooks",
+                            "spanish": "El/Ella Cocina"
+                        },
+                        {
+                            "english": "We Cook",
+                            "spanish": "Nosotros Cocinamos"
+                        },
+                        {
+                            "english": "They Cook",
+                            "spanish": "Ellos Cocinan"
+                        }
+                    ]
+                },
+                {
+                    "id": "past",
+                    "title": "Past Tense Verbs Ending in -AR",
+                    "description": "The past tense of Spanish is important to understand in order to fluently speak spanish. ",
+                    "steps": [
+                        {
+                            "english": "I Cooked",
+                            "spanish": "Yo Cocine"
+                        },
+                        {
+                            "english": "You Cook",
+                            "spanish": "Tu Cocinaste"
+                        },
+                        {
+                            "english": "He/She Cooked",
+                            "spanish": "El/Ella Cocino"
+                        },
+                        {
+                            "english": "We Cooked",
+                            "spanish": "Nosotros Cocinamos"
+                        },
+                        {
+                            "english": "They Cooked",
+                            "spanish": "Ellos Cocinaron"
+                        }
+                    ]
+                }
+
+            ]
         },
         "expert": {
             "id": "expert",
             "level": 3,
             "title": "Expert",
-            "description": "This level is suggested for those who have a strong understanding in Spanish and are looking to become a fluent Spanish-speaker. This module is diffcult and focuses on diffcult construction of sentences and paragraph writing. In addition, you must have extensive vocabulary and understand which tenses to use. This level is recommended for those who completed the Intermediate Level.",
-            "modules": []
+            "description": "This level is suggested for those who have a strong understanding in Spanish and are looking to become a fluent Spanish-speaker. This module is diffcult and focuses on the proper construction of sentences. In addition, you must have extensive vocabulary and understand which tenses to use. This level is recommended for those who completed the Intermediate Level.",
+            "modules": [
+
+                {
+                    "id": "sent-present",
+                    "title": "Sentences In Present Tense",
+                    "description": "The ability to construct an entire sentence in present tense is vital in order to speak fluent spanish. ",
+                    "steps": [
+                        {
+                            "english": "I walk to school.",
+                            "spanish": "Yo camino a la escuela."
+                        },
+                                                {
+                            "english": "You run to the party.",
+                            "spanish": "Tu corres a la fiesta."
+                        }
+                        
+                    ]
+                },
+                
+                {
+                    "id": "sent-past",
+                    "title": "Sentences In Past Tense",
+                    "description": "The ability to construct an entire sentence in past tense is vital in order to speak fluent spanish. ",
+                    "steps": [
+                        {
+                            "english": "He walked on the street.",
+                            "spanish": "Él caminó en la calle."
+                        },
+                        {
+                            "english": "We ran in the garden.",
+                            "spanish": "Nosotros corrimos en el jardín."
+                        }
+                        
+                    ]
+                }
+
+
+
+
+            ]
         }
     }
 }
