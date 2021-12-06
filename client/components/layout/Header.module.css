@@ -33,4 +33,6 @@
 }
 
 .userName {
+  display: flex;
+  align-items: center;
 }

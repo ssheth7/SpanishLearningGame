@@ -22,7 +22,7 @@ const PhysicalHeader = ({ activePage }) => {
         <div className={styles.user}>
           {loggedIn ? (
             <div className={styles.userName}>
-              <span>Hi, {username}</span>
+              <span>{username} • </span>
               <LinkList links={logoutLinks} activeURL={null} />
             </div>
           ) : (
