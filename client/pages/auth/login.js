@@ -22,12 +22,11 @@ export default function SignupPage() {
 
     try {
         const resp = await submitSignup({ email, password })
-        console.log(resp)
-        if(resp.success) {
-            console.log("OK")
-        } else {
-            console.log("Fail")
-        }
+        // if(resp.success) {
+        //     console.log("OK")
+        // } else {
+        //     console.log("Fail")
+        // }
 
     }catch(e) {
         console.error(e)

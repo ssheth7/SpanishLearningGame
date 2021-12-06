@@ -27,7 +27,7 @@ export default function ModuleStep({ level, module, stepIndex, step }) {
   }
 
   const onIncorrect = () => {
-    console.log("incorrect")
+    // console.log("incorrect")
   }
 
   return (

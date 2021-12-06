@@ -50,8 +50,6 @@ export default function Home({ levels = [] }) {
 export const getStaticProps = async () => {
   const allLevels = await getAllLevels()
 
-  console.log(allLevels)
-
   return {
     props: {
       levels: Object.values(allLevels) || [],

@@ -13,6 +13,7 @@ function SurveyQuestion({ questionIndex, question, answer, setQuestionCorrect })
     setQuestionCorrect(questionIndex, value.toLowerCase() === answer.toLowerCase())
   }, [value])
 
+  // TODO format table
   return (
     <>
       <tr>
@@ -28,13 +29,50 @@ function SurveyQuestion({ questionIndex, question, answer, setQuestionCorrect })
 export default function ModuleSurvey({ module }) {
   const [questionsCorrect, setQuestionsCorrect] = useState({})
 
+  const submitSurvey = async () => {
+    const correct = getPercentageCorrect()
+
+    const url = `/api/quiz/submit`
+
+    console.log({ module })
+
+    const module_id = module?.id
+
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        module_id: module_id,
+        grade: correct,
+      }),
+    })
+
+    console.log({ response })
+
+    if (response.ok) {
+      console.log("success")
+    } else {
+      console.log("fail")
+    }
+
+    // TODO handle response
+  }
+
+  const onClickSubmit = async () => {
+    console.log("Submit button clicked")
+    await submitSurvey()
+  }
+
   const setQuestionCorrect = (questionIndex, correct) => {
     setQuestionsCorrect({ ...questionsCorrect, [questionIndex]: correct })
   }
 
   const getPercentageCorrect = () => {
     return (
-      (Object.keys(questionsCorrect).filter((correct) => !!questionsCorrect[correct]).length / module.steps.length) *
+      (Object.keys(questionsCorrect).filter((correct) => !!questionsCorrect[correct]).length /
+        (module?.steps?.length || 1)) *
       100
     )
   }
@@ -47,18 +85,20 @@ export default function ModuleSurvey({ module }) {
         <p>Name the Spanish word for each of the following English words:</p>
 
         <table>
-          {module?.steps?.map((step, stepIndex) => (
-            <SurveyQuestion
-              key={stepIndex}
-              questionIndex={stepIndex}
-              question={step.english}
-              answer={step.spanish}
-              setQuestionCorrect={setQuestionCorrect}
-            />
-          ))}
+          <tbody>
+            {module?.steps?.map((step, stepIndex) => (
+              <SurveyQuestion
+                key={stepIndex}
+                questionIndex={stepIndex}
+                question={step.english}
+                answer={step.spanish}
+                setQuestionCorrect={setQuestionCorrect}
+              />
+            ))}
+          </tbody>
         </table>
 
-        <button>Submit</button>
+        <button onClick={() => onClickSubmit()}>Submit</button>
 
         <code> {getPercentageCorrect()}% correct</code>
       </AppContainer>

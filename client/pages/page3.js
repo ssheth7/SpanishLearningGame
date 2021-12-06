@@ -6,7 +6,6 @@ import { getAllLevels } from "../utils/query/material"
 var count = ["1", "2"]
 
 export default function Home({ levels = [] }) {
-  console.log({ levels })
   return (
     <div style={{ backgroundColor: "lightblue" }}>
       <AppLayout activePage="/">
@@ -59,8 +58,6 @@ export default function Home({ levels = [] }) {
 
 export const getStaticProps = async () => {
   const allLevels = await getAllLevels()
-
-  console.log(allLevels)
 
   return {
     props: {
