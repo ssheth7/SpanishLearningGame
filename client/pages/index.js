@@ -19,14 +19,14 @@ export default function Home({ levels = [] }) {
             <p>We offer a wide range of levels to help you learn Spanish. Start where you see fit.</p>
             <CardLayout>
               {(levels || []).map(({ id, title, description, pages }) => (
-                <div style={{ background: "#ecf6f6" }}>
+                <div key={id} style={{ background: "#ecf6f6" }}>
                   <h4>{title}</h4>
                   <p>{description}</p>
                   <button
                     variant="success"
                     onClick={(e) => {
                       e.preventDefault()
-                      location.href = String(pages)
+                      location.href = String('/modules')
                     }}
                   >
                     {" "}
