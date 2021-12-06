@@ -1,6 +1,7 @@
 import mongo from "./mongo"
+import auth from "./auth"
 
-const middles = [mongo]
+const middles = [mongo, auth]
 
 const middle = (handler) => async (req, res) => {
   for (let middle of middles) handler = middle(handler)

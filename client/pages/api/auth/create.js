@@ -32,7 +32,7 @@ async function handler(req, res) {
 
   res.setHeader(
     "Set-Cookie",
-    serialize("spanish_website_cookie", token, { maxAge: 900000, httpOnly: true, SameSite: "lax" })
+    serialize("spanish_website_cookie", token, { path: "/", maxAge: 900000, httpOnly: true, SameSite: "Strict" })
   )
 
   res.status(200).json({
