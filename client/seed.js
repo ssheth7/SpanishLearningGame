@@ -3,24 +3,40 @@ const faker = require("faker")
 const { MongoClient } = require("mongodb")
 
 const numUsers = 20
-const ModuleResult = (level) => {
-  let average
+const ModuleResult = (level, module) => {
+  let average;
   switch (level) {
     case 1:
-      average = 10 // seconds
-      break
+      average = 10; // seconds
+      break;
     case 2:
-      average = 30 // seconds
-      break
+      average = 30; // seconds
+      break;
     case 3:
-      average = 60 // seconds
-      break
+      average = 60; // seconds
+      break;
   }
-
+  let offset = 0;
+  switch (module) {
+    case 2:
+      offset = 1;
+      break;
+    case 3:
+      offset = 3;
+      break;
+    case 4:
+      offset = 4;
+      break;
+    case 5:
+      offset = 4;
+      break;
+    default: 
+      break;
+  }
   return {
     initialGrade: Math.floor(Math.random() * 2 + 1) * 10,
     finalGrade: Math.floor(Math.random() * (10 - 6) + 6) * 10,
-    timeSpent: Math.random() * (average / 2) + average,
+    timeSpent: Math.random() * (average / 2) + average - offset,
   }
 }
 const generateUser = () => {
@@ -28,7 +44,7 @@ const generateUser = () => {
     username: faker.internet.userName(),
     password: faker.internet.password(),
     level: {
-      1: [ModuleResult(1), ModuleResult(1), ModuleResult(1), ModuleResult(1), ModuleResult(1)],
+      1: [ModuleResult(1, 1), ModuleResult(1, 2), ModuleResult(1, 3), ModuleResult(1, 4), ModuleResult(1, 5)],
       2: [ModuleResult(2), ModuleResult(2)],
       3: [ModuleResult(3), ModuleResult(3)],
     },
