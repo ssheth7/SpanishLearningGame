@@ -12,6 +12,10 @@ const questions = [
     question: "What is a question?",
     answer: "This is an answer.",
   },
+  {
+    question: "What is another question?",
+    answer: "This is another answer.",
+  },
 ]
 
 export default function FAQ() {
