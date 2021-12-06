@@ -5,6 +5,10 @@ export const links = {
     name: app.initials,
     url: "/",
   },
+  modules: {
+    name: "Modules",
+    url: "/modules",
+  },
 }
 
 export const loginLinks = {
