@@ -1,12 +1,16 @@
 import SEO from "./SEO"
 import styles from "./Header.module.css"
 
-import { links, loginLinks } from "../../registry/nav"
+import { links, loginLinks, logoutLinks } from "../../registry/nav"
 import LinkList from "./../common/LinkList"
 
+import { useAuth } from "../../utils/hooks/auth"
+
 const PhysicalHeader = ({ activePage }) => {
-  const loggedIn = false
-  const username = ""
+  const { user } = useAuth()
+  console.log({ user })
+  const loggedIn = user && !!user._id
+  const username = user?.email ? user?.email.split("@")[0] : "Guest"
   return (
     <div className={styles.header}>
       <div className={styles.leftSide}>
@@ -19,7 +23,8 @@ const PhysicalHeader = ({ activePage }) => {
         <div className={styles.user}>
           {loggedIn ? (
             <div className={styles.userName}>
-              <span>{username}</span>
+              <span>Hi, {username}</span>
+              <LinkList links={logoutLinks} activeURL={null} />
             </div>
           ) : (
             <LinkList links={loginLinks} activeURL={null} />

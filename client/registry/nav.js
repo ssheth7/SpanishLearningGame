@@ -17,3 +17,11 @@ export const loginLinks = {
     url: "/auth/signup",
   },
 }
+
+
+export const logoutLinks = {
+  logout: {
+    name: "Sign out",
+    url: "/auth/logout",
+  },
+}
