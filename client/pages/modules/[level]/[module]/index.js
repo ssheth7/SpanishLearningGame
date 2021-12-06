@@ -10,7 +10,7 @@ export async function getServerSideProps(context) {
 
   return {
     redirect: {
-      destination: ["modules", level, module, step].join((c) => encodeURIComponent(c)),
+      destination: "/" + ["modules", level, module, step].map((c) => encodeURIComponent(c)).join("/"),
       permanent: false,
     },
   }
