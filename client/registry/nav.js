@@ -2,12 +2,16 @@ import { app } from "./app"
 
 export const links = {
   home: {
-    name: app.initials,
+    name: "Home",
     url: "/",
   },
   modules: {
     name: "Modules",
     url: "/modules",
+  },
+  feedback: {
+    name: "Feedback",
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSeARE-eVRo0a84GVJJD98ZMtK8dys_IKy5mRmhM-oYR2xBvGQ/viewform",
   },
 }
 

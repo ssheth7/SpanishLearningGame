@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import styles from "./auth.module.css"
 
 import { submitSignup } from "../../utils/query/authQuery"
-export default function SignupPage() {
+export default function SignupPage({ redirect }) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [queryError, setQueryError] = useState("")
@@ -39,7 +39,7 @@ export default function SignupPage() {
   }
 
   return (
-    <AuthLayout activeTab="signup">
+    <AuthLayout activeTab="signup" redirect={redirect}>
       <h2>🤝 &nbsp; Nice to meet you!</h2>
       <div className={styles.formContainer}>
         {queryError ? <small>{queryError}</small> : null}
@@ -51,4 +51,8 @@ export default function SignupPage() {
       </div>
     </AuthLayout>
   )
+}
+
+export const getInitialProps = async ({ query }) => {
+  return { redirect: query?.redirect || "/" }
 }

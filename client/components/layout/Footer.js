@@ -14,16 +14,8 @@ const Footer = () => {
           to learn and easy to navigate. Please complete the survey below.
         </p>
         <Row style={{ textAlign: "center", display: "flex", justifyContent: "center" }}>
-          <Col xl={xlsize}>
-            <a style={{ color: "green" }} href="https://forms.gle/XMU5LQqEcPnC7Fi58">
-              Website Response Form
-            </a>
-          </Col>
-          <Col xl={xlsize}>
-            <a style={{ color: "green" }} href="https://forms.gle/VbvCi4eiXm3jEL398">
-              Module Response Form
-            </a>
-          </Col>
+          <a href="https://forms.gle/XMU5LQqEcPnC7Fi58">Website Response Form &nbsp;</a> {" | "}
+          <a href="https://forms.gle/XMU5LQqEcPnC7Fi58">&nbsp; Module Response Form</a>
         </Row>
       </AppContainer>
       <br></br>
