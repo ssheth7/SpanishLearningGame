@@ -13,12 +13,12 @@ import { useEffect } from "react"
 export default function ModulesPage({ levels }) {
   const { user } = useAuth()
 
-  useEffect(() => {
-    if(authIsLoading)
-      return
-    if(user == null)
-      console.log("NEEDS LOGIN!")
-  }, [user])
+  // useEffect(() => {
+  //   if(authIsLoading)
+  //     return
+  //   if(user == null)
+  //     console.log("NEEDS LOGIN!")
+  // }, [user])
   return (
     <AppLayout activePage="/modules">
       <AppContainer>
