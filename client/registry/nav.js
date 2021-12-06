@@ -13,6 +13,10 @@ export const links = {
     name: "Feedback",
     url: "https://docs.google.com/forms/d/e/1FAIpQLSeARE-eVRo0a84GVJJD98ZMtK8dys_IKy5mRmhM-oYR2xBvGQ/viewform",
   },
+  faq: {
+    name: "FAQ",
+    url: "/faq"
+  }
 }
 
 export const loginLinks = {
@@ -20,6 +24,10 @@ export const loginLinks = {
     name: "Log in",
     url: "/auth/login",
   },
+  create: {
+    name: "Create an Account",
+    url: "/auth/signup"
+  }
 }
 
 export const logoutLinks = {
