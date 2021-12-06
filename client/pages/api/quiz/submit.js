@@ -1,4 +1,5 @@
 import middle from "../../../middleware/middle"
+import ModuleGradeRelationship from "../../../backend/model/ModuleGradeRelationship"
 
 const handler = async function (req, res) {
   if (req.method !== "POST")
@@ -31,7 +32,19 @@ const handler = async function (req, res) {
       error: "Grade must be between 0 and 100",
     })
 
-  // TODO store in database
+  if (!req.user) {
+    return res.status(401).json({
+      error: "Unauthorized",
+    })
+  }
+
+  const { user } = req
+
+  const rel = new ModuleGradeRelationship({ user: user, grade, module_id, attemptDate: new Date() })
+  await rel.save()
+
+  console.log({ rel })
+
   return res.status(200).json({
     success: true,
   })

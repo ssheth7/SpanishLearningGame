@@ -8,7 +8,6 @@ import { useAuth } from "../../utils/hooks/auth"
 
 const PhysicalHeader = ({ activePage }) => {
   const { user } = useAuth()
-  console.log({ user })
   const loggedIn = user && !!user._id
   const username = user?.email ? user?.email.split("@")[0] : "Guest"
   return (
