@@ -26,7 +26,7 @@ export default function Home({ levels = [] }) {
                     variant="success"
                     onClick={(e) => {
                       e.preventDefault()
-                      location.href = String('/modules')
+                      location.href = String("/modules")
                     }}
                   >
                     {" "}

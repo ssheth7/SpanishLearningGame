@@ -37,7 +37,7 @@ async function handler(req, res) {
 
   res.status(200).json({
     success: true,
-    redirect: req.headers.Referrer || "/",
+    redirect: req?.query?.redirect || req.headers.Referrer || "/",
     email,
   })
 }
