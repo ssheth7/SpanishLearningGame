@@ -6,8 +6,19 @@ import styles from "./index.module.css"
 
 import AppContainer from "../../components/common/AppContainer"
 
+import { useAuth } from "../../utils/hooks/auth"
+import { useEffect } from "react"
+
 // TODO make prettier
 export default function ModulesPage({ levels }) {
+  const { user } = useAuth()
+
+  useEffect(() => {
+    if(authIsLoading)
+      return
+    if(user == null)
+      console.log("NEEDS LOGIN!")
+  }, [user])
   return (
     <AppLayout activePage="/modules">
       <AppContainer>
