@@ -34,6 +34,27 @@ export default function ModulesPage({ levels }) {
     return null
   }
 
+  const renderImprovement = (moduleid) => {
+    if (!(moduleid in grades)) return null
+    let { attempts } = grades[moduleid]
+    if (attempts.length < 2) return null
+    attempts = attempts.map((a) => a.grade)
+
+    const maxAttempt = Math.max(...attempts)
+    const minAttempt = Math.min(...attempts)
+
+    console.log({ attempts, maxAttempt, minAttempt })
+
+    const improvement = maxAttempt - minAttempt
+
+    return (
+      <span className={styles.improvementText}>
+        ({improvement > 0 ? "+" : ""}
+        {Math.floor(improvement)}% improvement)
+      </span>
+    )
+  }
+
   return (
     <AppLayout activePage="/modules">
       <AppContainer>
@@ -48,7 +69,8 @@ export default function ModulesPage({ levels }) {
                 {level.modules.map((module) => (
                   <li key={module.id}>
                     <a href={`/modules/${level.id}/${module.id}`}>
-                      {findGrade(module.id) || "--"}% - <strong>{module.title}</strong>
+                      {Math.floor(findGrade(module.id)) || "--"}% - <strong>{module.title}</strong>{" "}
+                      {renderImprovement(module.id)}
                     </a>
                   </li>
                 ))}

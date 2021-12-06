@@ -69,8 +69,6 @@ export default function ModuleSurvey({ module, level }) {
       if (final) window.location.href = "/modules"
       else window.location.href = `/modules/${level.id}/${module?.id}/1`
     }
-
-    // TODO handle response
   }
 
   const onClickSubmit = async () => {
