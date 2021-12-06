@@ -8,11 +8,21 @@ import StepActionBar from "../../../../components/game/StepActionBar"
 
 import AppContainer from "../../../../components/common/AppContainer"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import { useRouter } from "next/router"
 
+import { useAuth } from "../../../../utils/hooks/auth"
+
 export default function ModuleStep({ level, module, stepIndex, step }) {
+  const { user, loading } = useAuth()
+
+  useEffect(() => {
+    if (!loading && !user) {
+      window.location.href = "/auth/login?redirect=" + encodeURIComponent(window.location.pathname)
+    }
+  }, [user, loading])
+
   const router = useRouter()
   const [doneIndex, setDoneIndex] = useState(-1)
 

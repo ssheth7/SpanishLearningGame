@@ -5,7 +5,16 @@ import { getModule } from "../../../../utils/query/material"
 
 import AppContainer from "../../../../components/common/AppContainer"
 
+import { useAuth } from "../../../../utils/hooks/auth"
+
 function SurveyQuestion({ questionIndex, question, answer, setQuestionCorrect }) {
+  const { user, loading } = useAuth()
+  useEffect(() => {
+    if (!loading && !user) {
+      window.location.href = "/auth/login?redirect=" + encodeURIComponent(window.location.pathname)
+    }
+  }, [user, loading])
+
   const [value, setValue] = useState("")
 
   useEffect(() => {

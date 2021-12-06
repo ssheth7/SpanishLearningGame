@@ -1,3 +1,7 @@
+/*
+* This data is used for integration testing purposes only.
+*/
+
 const bcrypt = require("bcrypt")
 const faker = require("faker")
 const { MongoClient } = require("mongodb")

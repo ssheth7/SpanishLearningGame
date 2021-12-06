@@ -43,8 +43,6 @@ const handler = async function (req, res) {
   const rel = new ModuleGradeRelationship({ user: user, grade, module_id, attemptDate: new Date() })
   await rel.save()
 
-  console.log({ rel })
-
   return res.status(200).json({
     success: true,
   })

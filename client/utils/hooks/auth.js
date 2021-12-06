@@ -28,7 +28,7 @@ export const SessionProvider = ({ children }) => {
       value={{
         isAuthenticated: user !== null,
         user,
-        authIsLoading: loading,
+        loading,
         login: (email) => {
           window.location.href = `/api/auth/login`
         },

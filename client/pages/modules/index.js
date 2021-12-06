@@ -7,18 +7,33 @@ import styles from "./index.module.css"
 import AppContainer from "../../components/common/AppContainer"
 
 import { useAuth } from "../../utils/hooks/auth"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 // TODO make prettier
 export default function ModulesPage({ levels }) {
-  const { user } = useAuth()
+  const { user, loading } = useAuth()
+  const [grades, setGrades] = useState({})
 
-  // useEffect(() => {
-  //   if(authIsLoading)
-  //     return
-  //   if(user == null)
-  //     console.log("NEEDS LOGIN!")
-  // }, [user])
+  useEffect(() => {
+    if (!loading && !user) {
+      window.location.href = "/auth/login?redirect=" + encodeURIComponent(window.location.pathname)
+    }
+  }, [user, loading])
+
+  useEffect(async () => {
+    if (!user) return
+
+    const getURL = "/api/quiz/grades"
+    const { grades } = await (await fetch(getURL)).json()
+
+    setGrades(grades)
+  }, [user])
+
+  const findGrade = (moduleid) => {
+    if (moduleid in grades) return grades[moduleid].grade
+    return null
+  }
+
   return (
     <AppLayout activePage="/modules">
       <AppContainer>
@@ -32,7 +47,9 @@ export default function ModulesPage({ levels }) {
               <ul>
                 {level.modules.map((module) => (
                   <li key={module.id}>
-                    <a href={`/modules/${level.id}/${module.id}`}>{module.title}</a>
+                    <a href={`/modules/${level.id}/${module.id}`}>
+                      {findGrade(module.id) || "--"}% - <strong>{module.title}</strong>
+                    </a>
                   </li>
                 ))}
               </ul>
