@@ -6,6 +6,7 @@ import Jumbotron from "../components/common/Jumbotron"
 
 import CardLayout from "../components/common/CardLayout"
 
+// TODO add questions here
 const questions = [
   {
     question: "What is a question?",
