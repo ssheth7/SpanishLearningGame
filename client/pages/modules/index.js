@@ -18,7 +18,7 @@ export default function ModulesPage({ levels }) {
     if (!loading && !user) {
       window.location.href = "/auth/login?redirect=" + encodeURIComponent(window.location.pathname)
     }
-  }, [user, loading])
+  }, [user])
 
   useEffect(async () => {
     if (!user) return

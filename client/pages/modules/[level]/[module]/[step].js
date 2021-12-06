@@ -19,19 +19,21 @@ export default function ModuleStep({ level, module, stepIndex, step }) {
 
   useEffect(() => {
     if (!loading && !user) {
+      if(!!user && user._id)
+        return
       window.location.href = "/auth/login?redirect=" + encodeURIComponent(window.location.pathname)
     }
-  }, [user, loading])
+  }, [user])
 
   const router = useRouter()
   const [doneIndex, setDoneIndex] = useState(-1)
 
   const nextPage = () => {
-    router.push(`/modules/${level.id}/${module.id}/${stepIndex + 1 + 1}`)
+    router.push()
   }
   const previousPage = () => {
     if (stepIndex == 0) return
-    router.push(`/modules/${level.id}/${module.id}/${stepIndex}`)
+    
   }
 
   // TODO temp
@@ -42,14 +44,12 @@ export default function ModuleStep({ level, module, stepIndex, step }) {
         {module && step ? (
           <ActiveStep
             done={doneIndex == stepIndex}
-            actionBar={<StepActionBar module={module} stepIndex={stepIndex} />}
+            actionBar={<StepActionBar module={module} nextPage={`/modules/${level.id}/${module.id}/${stepIndex + 1 + 1}`} previousPage={`/modules/${level.id}/${module.id}/${stepIndex}`} stepIndex={stepIndex} />}
             step={step}
             nextPage={nextPage}
             previousPage={previousPage}
           />
         ) : null}
-        <button onClick={() => previousPage()}>Back</button>
-        <button onClick={() => nextPage()}>Forward</button>
       </AppContainer>
     </AppLayout>
   )
@@ -74,6 +74,8 @@ export async function getStaticPaths() {
       }
     }
   }
+
+  console.log("Generating paths for modules", paths)
 
   return { paths, fallback: true }
 }

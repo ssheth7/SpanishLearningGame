@@ -7,6 +7,8 @@ import AppContainer from "../../../../components/common/AppContainer"
 
 import { useAuth } from "../../../../utils/hooks/auth"
 
+import Jumbotron from "../../../../components/common/Jumbotron"
+
 function SurveyQuestion({ questionIndex, question, answer, setQuestionCorrect }) {
   const { user, loading } = useAuth()
   useEffect(() => {
@@ -35,7 +37,12 @@ function SurveyQuestion({ questionIndex, question, answer, setQuestionCorrect })
   )
 }
 
-export default function ModuleSurvey({ module }) {
+export default function ModuleSurvey({ module, level }) {
+  let [final, setFinal] = useState(false)
+
+  useEffect(() => {
+    setFinal(!!window ? window.location.href.includes("final") : false)
+  }, [])
   const [questionsCorrect, setQuestionsCorrect] = useState({})
 
   const submitSurvey = async () => {
@@ -58,19 +65,15 @@ export default function ModuleSurvey({ module }) {
       }),
     })
 
-    console.log({ response })
-
     if (response.ok) {
-      console.log("success")
-    } else {
-      console.log("fail")
+      if (final) window.location.href = "/modules"
+      else window.location.href = `/modules/${level.id}/${module?.id}/1`
     }
 
     // TODO handle response
   }
 
   const onClickSubmit = async () => {
-    console.log("Submit button clicked")
     await submitSurvey()
   }
 
@@ -89,7 +92,10 @@ export default function ModuleSurvey({ module }) {
   return (
     <AppLayout activePage="/modules">
       <AppContainer>
-        <h1>Module Quiz</h1>
+        <Jumbotron>
+          <h1>{final ? "Final " : "Preliminary "} quiz!</h1>
+          <h2>{final ? "Let's see what you've learned." : "First, we'll see what you already know!"}</h2>
+        </Jumbotron>
 
         <p>Name the Spanish word for each of the following English words:</p>
 
