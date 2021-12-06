@@ -67,6 +67,7 @@ export const getStaticProps = async ({ params }) => {
       },
     }
   }
+  
   const step = module?.steps?.[stepIndex]
 
   if (!level || stepIndex == -1 || !module) {

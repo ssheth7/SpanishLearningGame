@@ -10,40 +10,11 @@ export default function ActiveStep({ done = false, onCorrect = null, step, engSp
   const _given = engSpan ? step.english : step.spanish
   const _answer = engSpan ? step.spanish : step.english
 
-  useEffect(() => setGuess(""), [step])
-  useEffect(() => {
-    if (!guess) return
-    if (guess.toLowerCase() === _answer.toLowerCase()) {
-      setGuess("")
-      onCorrect()
-    }
-  }, [guess])
-
-  const onEnter = () => {
-    if (guess.toLowerCase() === _answer.toLowerCase()) {
-      setGuess("")
-      onCorrect()
-    } else {
-      setGuess("")
-      onIncorrect()
-    }
-  }
-
   return (
     <div className={styles.activeStep}>
       <div className={styles.stepContainer}>
         <div className={styles.center}>{actionBar}</div>
-        {done ? (
-          <span>Correct!</span>
-        ) : (
-          <>
-            {step?.photo ? (
-              <RenderStepPhoto guess={guess} setGuess={setGuess} onEnter={onEnter} engSpan={engSpan} step={step} />
-            ) : (
-              <RenderStepNoPhoto guess={guess} setGuess={setGuess} onEnter={onEnter} engSpan={engSpan} step={step} />
-            )}
-          </>
-        )}
+        
       </div>
     </div>
   )
