@@ -12,14 +12,18 @@ const tabs = {
   },
 }
 
-export default function AuthLayout({ children, activeTab = "login" }) {
+export default function AuthLayout({ children, activeTab = "login", redirect = null }) {
   return (
     <>
       <div className={styles.container}>
         <div className={styles.centerComponent}>
           <div className={styles.tabBar}>
             {Object.keys(tabs).map((tab) => (
-              <Link key={tab} href={tabs[tab].to} passHref>
+              <Link
+                key={tab}
+                href={tabs[tab].to + (redirect ? "?redirect=" + encodeURIComponent(redirect) : "")}
+                passHref
+              >
                 <a className={`${styles.tab} ${tab === activeTab ? styles.active : ""}`}>{tabs[tab].label}</a>
               </Link>
             ))}

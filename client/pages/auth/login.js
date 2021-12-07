@@ -47,7 +47,3 @@ export default function SignupPage({ redirect }) {
     </AuthLayout>
   )
 }
-
-export const getInitialProps = async ({ query }) => {
-  return { redirect: query?.redirect || "/" }
-}

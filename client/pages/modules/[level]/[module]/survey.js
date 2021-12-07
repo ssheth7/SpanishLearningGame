@@ -11,11 +11,19 @@ import Jumbotron from "../../../../components/common/Jumbotron"
 
 function SurveyQuestion({ questionIndex, question, answer, setQuestionCorrect }) {
   const { user, loading } = useAuth()
-  useEffect(() => {
+
+  const check = () => {
     if (!loading && !user) {
-      window.location.href = "/auth/login?redirect=" + encodeURIComponent(window.location.pathname)
+      window.location.href = "/auth/signup?redirect=" + encodeURIComponent(window.location.pathname)
     }
+  }
+  useEffect(() => {
+    check()
   }, [user, loading])
+
+  useEffect(() => {
+    check()
+  }, [])
 
   const [value, setValue] = useState("")
 
@@ -113,7 +121,7 @@ export default function ModuleSurvey({ module, level }) {
 
         <button onClick={() => onClickSubmit()}>Submit</button>
 
-        <code> {getPercentageCorrect()}% correct</code>
+        {/* <code> {getPercentageCorrect()}% correct</code> */}
       </AppContainer>
     </AppLayout>
   )

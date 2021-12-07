@@ -15,10 +15,17 @@ export default function ModulesPage({ levels }) {
   const [grades, setGrades] = useState({})
 
   useEffect(() => {
+    console.log({ loading, user })
     if (!loading && !user) {
-      window.location.href = "/auth/login?redirect=" + encodeURIComponent(window.location.pathname)
+      window.location.href = "/auth/signup?redirect=" + encodeURIComponent(window.location.pathname)
     }
   }, [user])
+
+  useEffect(() => {
+    if (!loading && !user) {
+      window.location.href = "/auth/signup?redirect=" + encodeURIComponent(window.location.pathname)
+    }
+  }, [])
 
   useEffect(async () => {
     if (!user) return
@@ -78,7 +85,7 @@ export default function ModulesPage({ levels }) {
             </div>
           ))
         ) : (
-          <p>Just a sec, we're getting things ready...</p>
+          <p>Just a sec, we&apos;re getting things ready...</p>
         )}
       </AppContainer>
     </AppLayout>

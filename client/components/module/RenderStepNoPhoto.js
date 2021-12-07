@@ -7,7 +7,7 @@ export default function RenderStepNoPhoto({ step, guess, setGuess, engSpan }) {
   return (
     <>
       <span>
-        Translate "{_given}" to {engSpan ? "Spanish" : "English"}
+        Translate &quot;{_given}&quot; to {engSpan ? "Spanish" : "English"}
       </span>
       <br />
       <input onChange={(e) => setGuess(e.target.value)} value={guess} />

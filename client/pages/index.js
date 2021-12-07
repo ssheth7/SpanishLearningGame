@@ -5,7 +5,11 @@ import AppContainer from "../components/common/AppContainer"
 import Jumbotron from "../components/common/Jumbotron"
 
 import CardLayout from "../components/common/CardLayout"
+
+import { useAuth } from "../utils/hooks/auth"
 export default function Home({ levels = [] }) {
+  const { user, loading } = useAuth()
+
   return (
     <div style={{ backgroundColor: "white" }}>
       <AppLayout activePage="/">
@@ -26,7 +30,7 @@ export default function Home({ levels = [] }) {
                     variant="success"
                     onClick={(e) => {
                       e.preventDefault()
-                      location.href = String("/modules")
+                      location.href = String("/auth/signup")
                     }}
                   >
                     {" "}

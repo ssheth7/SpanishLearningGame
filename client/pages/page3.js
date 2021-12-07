@@ -20,7 +20,7 @@ export default function Home({ levels = [] }) {
           />
         </Col>
         <h2 style={{ color: "green", textAlign: "center" }}> Modules & Quizes Below</h2>
-        <Container fluid>
+        {/* <Container fluid>
           {count.map((number) => (
             <Row style={{ textAlign: "center", display: "flex", justifyContent: "center" }}>
               <div>
@@ -50,7 +50,7 @@ export default function Home({ levels = [] }) {
               </div>
             </Row>
           ))}
-        </Container>
+        </Container> */}
       </AppLayout>
     </div>
   )

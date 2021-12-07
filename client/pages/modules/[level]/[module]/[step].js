@@ -19,8 +19,7 @@ export default function ModuleStep({ level, module, stepIndex, step }) {
 
   useEffect(() => {
     if (!loading && !user) {
-      if(!!user && user._id)
-        return
+      if (!!user && user._id) return
       window.location.href = "/auth/login?redirect=" + encodeURIComponent(window.location.pathname)
     }
   }, [user])
@@ -33,7 +32,6 @@ export default function ModuleStep({ level, module, stepIndex, step }) {
   }
   const previousPage = () => {
     if (stepIndex == 0) return
-    
   }
 
   // TODO temp
@@ -44,7 +42,14 @@ export default function ModuleStep({ level, module, stepIndex, step }) {
         {module && step ? (
           <ActiveStep
             done={doneIndex == stepIndex}
-            actionBar={<StepActionBar module={module} nextPage={`/modules/${level.id}/${module.id}/${stepIndex + 1 + 1}`} previousPage={`/modules/${level.id}/${module.id}/${stepIndex}`} stepIndex={stepIndex} />}
+            actionBar={
+              <StepActionBar
+                module={module}
+                nextPage={`/modules/${level.id}/${module.id}/${stepIndex + 1 + 1}`}
+                previousPage={`/modules/${level.id}/${module.id}/${stepIndex}`}
+                stepIndex={stepIndex}
+              />
+            }
             step={step}
             nextPage={nextPage}
             previousPage={previousPage}
@@ -90,7 +95,7 @@ export const getStaticProps = async ({ params }) => {
   if (stepIndex >= module.steps.length) {
     return {
       redirect: {
-        destination: "/" + ["modules", level.id, module.id, "survey"].map((c) => encodeURIComponent(c)).join("/"),
+        destination: "/" + ["modules", level.id, module.id, "survey"].map((c) => encodeURIComponent(c)).join("/") + "?final",
         permanent: false,
       },
     }
