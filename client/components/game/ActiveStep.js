@@ -16,6 +16,8 @@ export default function ActiveStep({ step, engSpan = true, actionBar = null }) {
             <div className={styles.front}>{_given}</div>
             <div className={styles.back}>{_answer}</div>
         </div>
+        <br />
+        <small>Click to flip</small>
       </div>
     </div>
   )
